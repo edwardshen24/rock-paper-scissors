@@ -1,5 +1,4 @@
 
-const playerSelection = "roCK";
 const computerSelection = computerPlay();
 
 
@@ -11,18 +10,30 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection) {
     let revisedPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-    console.log(revisedPlayerSelection, computerSelection)
-
-    if (revisedPlayerSelection === "Rock" && computerSelection === "Rock")
-        console.log(`You chose ${revisedPlayerSelection} and you won.`);
+    
+    if (revisedPlayerSelection === computerSelection)
+        return ("It's a tie.");
     else if(revisedPlayerSelection === "Rock" && computerSelection === "Paper")
-        console.log("You lose.");
+        return ("You lose.");
     else if(revisedPlayerSelection === "Rock" && computerSelection === "Scissors")
-        console.log("You win.")
+        return ("You win.");
+    else if(revisedPlayerSelection === "Paper" && computerSelection === "Rock")
+        return ("You win.");
+    else if(revisedPlayerSelection === "Paper" && computerSelection === "Scissors")
+        return ("You lose.");
+    else if(revisedPlayerSelection === "Scissors" && computerSelection === "Rock")
+        return ("You lose.")
+    else if(revisedPlayerSelection === "Scissors" && computerSelection === "Paper")
+        return ("You win.")
   }
 
+ 
 function game(){
-    playRound(playerSelection, computerSelection)
+    let playerSelection;
+    for (let i = 1; i<=5; i++){
+        playerSelection = prompt("Enter your choice:");
+        alert( playRound(playerSelection, computerPlay()));
+    }
 }
 
-game();
+game()
