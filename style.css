@@ -1,0 +1,15 @@
+body{
+    margin:0;
+    
+}
+
+
+
+.buttons{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100vh; /*brings to the center of the page */
+}

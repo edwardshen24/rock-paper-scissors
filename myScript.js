@@ -30,10 +30,11 @@ function playRound(playerSelection, computerSelection) {
  
 function game(){
     let playerSelection;
-    for (let i = 1; i<=5; i++){
-        playerSelection = prompt("Enter your choice:");
+    
+        
         console.log( playRound(playerSelection, computerPlay()));
-    }
+    
 }
-
 game()
+
+//for (let i = 1; i<=5; i++)
