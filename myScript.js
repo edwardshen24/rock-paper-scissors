@@ -29,12 +29,16 @@ function playRound(playerSelection, computerSelection) {
 
  
 function game(){
-    let playerSelection;
-    
-        
-        console.log( playRound(playerSelection, computerPlay()));
-    
+    const btn = document.querySelectorAll('button');
+    btn.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', () => {
+            console.log(playRound(button.id, computerPlay()));
+        });
+      });
 }
+
 game()
 
 //for (let i = 1; i<=5; i++)

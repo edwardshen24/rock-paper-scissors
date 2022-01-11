@@ -1,11 +1,11 @@
 body{
     margin:0;
-    
+    background: black;
 }
 
 
 
-.buttons{
+#buttons{
     display: flex;
     flex: 1;
     justify-content: center;
