@@ -13,3 +13,9 @@ body{
     gap: 50px;
     height: 100vh; /*brings to the center of the page */
 }
+
+#container{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
