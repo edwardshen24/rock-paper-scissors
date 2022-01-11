@@ -1,5 +1,7 @@
 
 const computerSelection = computerPlay();
+let computerScore = 0;
+let playerScore = 0;
 
 function computerPlay(){
     let choices = ["Rock","Paper","Scissors"];
@@ -8,37 +10,49 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection) {
-    let revisedPlayerSelection = playerSelection.charAt(0).toUpperCase() 
-        + playerSelection.slice(1).toLowerCase();
     
-    if (revisedPlayerSelection === computerSelection)
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, it's a tie.`);
-    else if(revisedPlayerSelection === "Rock" && computerSelection === "Paper")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you lose.`);
-    else if(revisedPlayerSelection === "Rock" && computerSelection === "Scissors")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you win.`);
-    else if(revisedPlayerSelection === "Paper" && computerSelection === "Rock")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you win.`);
-    else if(revisedPlayerSelection === "Paper" && computerSelection === "Scissors")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you lose.`);
-    else if(revisedPlayerSelection === "Scissors" && computerSelection === "Rock")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you lose.`);
-    else if(revisedPlayerSelection === "Scissors" && computerSelection === "Paper")
-        return (`You chose ${revisedPlayerSelection} and the computer chose ${computerSelection}, you win.`);
+    if (playerSelection === computerSelection)
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, it's a tie.`);
+    else if(playerSelection === "Rock" && computerSelection === "Paper"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you lose.`);
+        computerScore++;
+    }
+    else if(playerSelection === "Rock" && computerSelection === "Scissors"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you win.`);
+        playerScore++;
+    }
+    else if(playerSelection === "Paper" && computerSelection === "Rock"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you win.`);
+        playerScore++;
+    }
+    else if(playerSelection === "Paper" && computerSelection === "Scissors"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you lose.`);
+        computerScore++;
+    }
+    else if(playerSelection === "Scissors" && computerSelection === "Rock"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you lose.`);
+        computerScore++;
+    }
+    else if(playerSelection === "Scissors" && computerSelection === "Paper"){
+        console.log (`You chose ${playerSelection} and the computer chose ${computerSelection}, you win.`);
+        playerScore++;
+    }
+    console.log(playerScore, computerScore)
+
   }
 
  
 function game(){
     const btn = document.querySelectorAll('button');
-    btn.forEach((button) => {
-
-        // and for each one we add a 'click' listener
+    btn.forEach((button) => { 
         button.addEventListener('click', () => {
-            console.log(playRound(button.id, computerPlay()));
+            playRound(button.id, computerPlay())
         });
       });
 }
 
 game()
+
+
 
 //for (let i = 1; i<=5; i++)
