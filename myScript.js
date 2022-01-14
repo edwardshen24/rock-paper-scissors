@@ -19,19 +19,7 @@ function playRound(playerSelection, computerSelection) {
     displayScore.style.color = "white";
     displayGame.style.color = "white";
     
-    if ( playerScore === 5){
-        displayScore.textContent = "Player wins!";
-        replay();
     
-    }
-    else if (computerScore === 5) {
-        displayScore.textContent = "Computer wins!";
-        replay();
-        
-    }
-    else
-        displayScore.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore;
-    container.appendChild(displayScore);   
     
     if (playerSelection === computerSelection)
         displayGame.textContent =  (`You chose ${playerSelection} and the computer chose ${computerSelection}, it's a tie.`);
@@ -60,6 +48,20 @@ function playRound(playerSelection, computerSelection) {
         playerScore++;
     }
     
+    if ( playerScore === 5){
+        displayScore.textContent = "Player wins!";
+        replay();
+    
+    }
+    else if (computerScore === 5) {
+        displayScore.textContent = "Computer wins!";
+        replay();
+        
+    }
+    else
+        displayScore.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore;
+    container.appendChild(displayScore);   
+
     container.appendChild(displayGame);
   }
 
