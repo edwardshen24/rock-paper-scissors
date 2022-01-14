@@ -18,7 +18,7 @@ body{
 #buttons div img{
     width: 100px;
     height: 100px;
-    gap: 20px;
+    margin: 20px;
 }
 #buttons{
     display: flex;
@@ -28,16 +28,32 @@ body{
     gap: 50px;
     flex: 1;
     margin: 50px;
-     /*brings to the center of the page */
+    
 }
 
 .card{
     width: 10%;
     gap: 50px;
+    padding: 20px;
 }
 
-#buttons div button{
+button{
     padding: 10px 15px;
+    background-color: grey;
+    font-family: Roboto, sans-serif;
+    border-radius: 12px;
+}
+
+button:hover{
+    box-shadow: 0 0 1rem #cbd3d4;
+    transform: scale(1.1);
+}
+
+button:active {
+    position: relative;
+    top: 3px;
+    color: rgb(65, 58, 58);
+    border-color: #ad9a2c;
 }
 
 #container{

@@ -83,7 +83,6 @@ function replay(){
             document.getElementById("Rock").disabled = false;
             document.getElementById("Paper").disabled = false;
             document.getElementById("Scissors").disabled = false;
-            replayArea.hide();
         });
     replayArea.appendChild(replayButton);
     
