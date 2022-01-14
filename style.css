@@ -18,6 +18,7 @@ body{
 #buttons div img{
     width: 100px;
     height: 100px;
+    gap: 20px;
 }
 #buttons{
     display: flex;
@@ -25,7 +26,14 @@ body{
     text-align: center;
     justify-content: center;
     gap: 50px;
-    height: 70vh; /*brings to the center of the page */
+    flex: 1;
+    margin: 50px;
+     /*brings to the center of the page */
+}
+
+.card{
+    width: 10%;
+    gap: 50px;
 }
 
 #buttons div button{
@@ -40,7 +48,7 @@ body{
 }
 
 #replayArea{
-    flex: 1;
+    margin: 200px;
     display:flex;
     justify-content: center;
     align-items: center;
