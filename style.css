@@ -1,19 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body{
     margin:0;
     background: black;
+    font-family: Roboto, sans-serif;
 }
 
-
-
-#buttons{
+.header{
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#buttons div img{
+    width: 100px;
+    height: 100px;
+}
+#buttons{
+    display: flex;
+    align-items:center;
+    text-align: center;
+    justify-content: center;
     gap: 50px;
     height: 70vh; /*brings to the center of the page */
 }
 
-#buttons button{
+#buttons div button{
     padding: 10px 15px;
 }
 
