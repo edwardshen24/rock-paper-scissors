@@ -7,15 +7,26 @@ body{
 
 #buttons{
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 100vh; /*brings to the center of the page */
+    height: 70vh; /*brings to the center of the page */
+}
+
+#buttons button{
+    padding: 10px 15px;
 }
 
 #container{
     display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#replayArea{
+    flex: 1;
+    display:flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }

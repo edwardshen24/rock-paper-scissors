@@ -5,6 +5,9 @@ let playerScore = 0;
 const container = document.querySelector('#container');
 const displayScore = document.createElement('div');
 const displayGame = document.createElement('div');
+const btn = document.querySelectorAll('button');
+const replayButton = document.createElement("button");
+
 
 function computerPlay(){
     let choices = ["Rock","Paper","Scissors"];
@@ -15,14 +18,20 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection) {
     displayScore.style.color = "white";
     displayGame.style.color = "white";
-    if ( playerScore !== 5|| computerScore !== 5)
-        displayScore.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore;
-    else if (playerScore === 5)
-        displayScore.textContent = "Player wins!";
-    else
-        displayScore.textContent = "Computer wins!";
     
-    container.appendChild(displayScore);
+    if ( playerScore === 5){
+        displayScore.textContent = "Player wins!";
+        replay();
+    
+    }
+    else if (computerScore === 5) {
+        displayScore.textContent = "Computer wins!";
+        replay();
+        
+    }
+    else
+        displayScore.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore;
+    container.appendChild(displayScore);   
     
     if (playerSelection === computerSelection)
         displayGame.textContent =  (`You chose ${playerSelection} and the computer chose ${computerSelection}, it's a tie.`);
@@ -50,13 +59,12 @@ function playRound(playerSelection, computerSelection) {
         displayGame.textContent =   (`You chose ${playerSelection} and the computer chose ${computerSelection}, you win.`);
         playerScore++;
     }
-    console.log(playerScore, computerScore)
+    
     container.appendChild(displayGame);
   }
 
  
 function game(){
-    const btn = document.querySelectorAll('button');
     btn.forEach((button) => { 
         button.addEventListener('click', () => {
             playRound(button.id, computerPlay())
@@ -64,8 +72,25 @@ function game(){
       });
 }
 
+function replay(){
+    document.getElementById("Rock").disabled = true;
+    document.getElementById("Paper").disabled = true;
+    document.getElementById("Scissors").disabled = true;
+    replayButton.innerHTML = "Replay?";
+    replayButton.addEventListener("click", () => {
+            computerScore = 0;
+            playerScore = 0;
+            document.getElementById("Rock").disabled = false;
+            document.getElementById("Paper").disabled = false;
+            document.getElementById("Scissors").disabled = false;
+            replayArea.hide();
+        });
+    replayArea.appendChild(replayButton);
+    
+}
+
 game()
 
 
 
-//for (let i = 1; i<=5; i++)
+
